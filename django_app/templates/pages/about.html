@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | About Us {% endblock %}
+
+{% block content %}
+
+
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">About MultiBrand Cars</h1>
+                <p class="lead">
+                    A business that sells new or used cars at the retail level, <br>
+                    based on a dealership contract with an automaker or its sales subsidiary.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">
+                        <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active"> About</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section id="about" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>We Bring You The Best Available</h2>
+                <p class="lead">
+                    We sell and service vehicles by multiple companies!
+                </p>
+                <img src="{% static 'img/about.jpg' %}" alt="">
+                <p class="mt-4">
+                    Car dealerships are typically franchised to sell and service vehicles by
+                    specific companies. They are often located on properties offering enough
+                    room to have buildings housing a showroom, mechanical service, and body
+                    repair facilities, as well as to provide storage for used and new vehicles.
+                    Many dealerships are located out of town or on the edge of town centers.
+                </p>
+            </div>
+            <div class="col-md-4">
+
+                {% if mvp_dealers %}
+                    {% for mvp_dealer in mvp_dealers %}
+                        <div class="card">
+                            <img class="card-img-top" src="{{ mvp_dealer.photo.url }}"
+                                 alt="Seller of the month">
+                            <div class="card-body">
+                                <h5 class="card-title">Seller Of The Month</h5>
+                                <h6 class="text-secondary">
+                                    <i class="fas fa-award text-success mb-3"></i> {{ mvp_dealer.name }}
+                                </h6>
+                                <p class="card-text">{{ mvp_dealer.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Work -->
+<section id="work" class="bg-dark text-white text-center">
+    <h2 class="display-4">We Work For You</h2>
+    <h4>
+        Multibrand and multimaker car dealers sell cars from different and <br>
+        independent carmakers. Some are specialized in electric vehicles.
+    </h4>
+    <hr>
+    <a href="listings.html" class="btn btn-secondary text-white btn-lg">View Our Inventory</a>
+</section>
+
+<!-- Team -->
+<section id="team" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Our Team</h2>
+        <div class="row text-center">
+
+            {% if dealers %}
+                {% for dealer in dealers %}
+                    <div class="col-md-4">
+                        <img src="{{ dealer.photo.url }}" alt="" class="rounded-circle mb-3">
+                        <h4>{{ dealer.name }}</h4>
+                        <p class="text-success">
+                            <i class="fas fa-award text-success mb-3"></i> Dealer</p>
+                        <hr>
+                        <p>
+                            <i class="fas fa-phone"></i> {{ dealer.phone }}</p>
+                        <p>
+                            <i class="fas fa-envelope-open"></i> {{ dealer.email }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No Car Dealers Available</p>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
