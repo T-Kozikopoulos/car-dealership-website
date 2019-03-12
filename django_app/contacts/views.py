@@ -32,7 +32,7 @@ def contact(request):
             'MultiBrand Cars Listing Inquiry',
             'New inquiry for {}. Go to the admin panel for more info.'.format(listing),
             settings.EMAIL_HOST_USER,
-            [dealer_email, 'tasos_tasiklas@yahoo.com'],
+            [dealer_email, '[email here]'],
             fail_silently=False
         )
 
