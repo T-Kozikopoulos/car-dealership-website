@@ -1,5 +1,5 @@
 # car-dealership-website
-Fully functional car dealership website that runs locally (might eventually deploy sometime in the future).
+Fully functional car dealership website that runs locally (might deploy online sometime in the future).
 
 Made using Django, Bootstrap and PostgreSQL.
 
