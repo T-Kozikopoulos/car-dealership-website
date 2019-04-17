@@ -1,7 +1,7 @@
 # car-dealership-website
-Fully functional car dealership website that runs locally (might deploy online sometime in the future).
+Fully functional car dealership website. Made using Django, Bootstrap and PostgreSQL.
 
-Made using Django, Bootstrap and PostgreSQL.
+Demo: https://multibrandcars.herokuapp.com/
 
 Features:
 - Easy to use and mobile friendly,
