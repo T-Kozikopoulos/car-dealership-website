@@ -7,7 +7,7 @@ Features:
 - supports multiple car dealers,
 - automated email notification upon contact from customers.
 
-Visit the following link and test out the site functionality for yourself: multibrandcars.herokuapp.com
+Visit the following link and test out the site functionality for yourself: [multibrandcars.herokuapp.com](multibrandcars.herokuapp.com)
 
 Front page
 
